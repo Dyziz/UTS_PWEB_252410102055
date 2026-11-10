@@ -1,5 +1,7 @@
-﻿# TrackTugas
-TrackTugas adalah website sederhana untuk tugas UTS Pweb, dibuat menggunakan Laravel, Blade dengan framework Tailwind CSS. Website ini menampilkan dashboard, profile, dan daftar tugas kuliah.
+![Preview TrackTugas](public/Preview.png)
+
+# Track Tugas by Dizy
+Track Tugas by Dizy adalah website sederhana untuk tugas UTS Pweb, dibuat menggunakan Laravel, Blade dengan framework Tailwind CSS. Website ini menampilkan dashboard, profile, dan daftar tugas kuliah.
 
 ## Halaman
 - Login sederhana untuk memasukkan username.
@@ -7,7 +9,7 @@ TrackTugas adalah website sederhana untuk tugas UTS Pweb, dibuat menggunakan Lar
 - Profile untuk menampilkan informasi pengguna.
 - Daftar tugas kuliah untuk menampilkan mata kuliah, tugas, dan statusnya.
 
-note : data tugas hanya memakai array dari [app/Http/Controllers/PageController.php](app/Http/Controllers/PageController.php) di line 20, jadi semua data hanya sebagai simulasi saja.
+note : data tugas sementara hanya memakai array dari [app/Http/Controllers/PageController.php](app/Http/Controllers/PageController.php) di line 20, jadi semua data hanya sebagai simulasi saja.
 
 ## Struktur Project
 
