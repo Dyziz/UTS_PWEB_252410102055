@@ -1,7 +1,7 @@
 ![Preview TrackTugas](public/Preview.png)
 
 # Track Tugas by Dizy
-Track Tugas by Dizy adalah website sederhana untuk tugas UTS Pweb, dibuat menggunakan Laravel, Blade dengan framework Tailwind CSS. Website ini menampilkan dashboard, profile, dan daftar tugas kuliah.
+Track Tugas by Dizy adalah website sederhana untuk Mencatat list tugas kuliah, dibuat menggunakan Laravel, Blade dengan framework Tailwind CSS. Website ini menampilkan dashboard, profile, dan daftar tugas kuliah.
 
 ## Halaman
 - Login sederhana untuk memasukkan username.
