@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+@source '../views/**/*.blade.php';
+
+@theme {
+    --font-sans: 'Outfit', sans-serif;
+    --color-ink: #2A323F;
+    --color-muted: rgb(42 50 63 / 72%);
+    --color-accent: #FEEF4C;
+    --color-line: rgb(42 50 63 / 15%);
+}
+@layer base {
+    body {
+        isolation: isolate;
+        background: radial-gradient(ellipse at 15% 0%, rgb(254 239 76 / 5%), transparent 60%), #2A323F;
+    }
+    body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background: radial-gradient(ellipse at center, rgb(254 239 76 / 9%), transparent 55%);
+        background-size: 160% 160%;
+        animation: glow-drift 28s ease-in-out infinite alternate;
+    }
+    :focus-visible { outline: 3px solid #FEEF4C; outline-offset: 4px; }
+}
+@layer components {
+    .page-container { @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8; }
+    .surface { @apply min-w-0 w-full rounded-3xl border border-ink/15 bg-white/95 shadow-[0_20px_60px_-35px_#2A323F80]; }
+    .nav-link { @apply flex min-h-11 items-center justify-center rounded-xl px-4 py-2.5 text-sm font-medium transition-colors duration-200; }
+    .form-input { @apply h-12 w-full min-w-0 rounded-xl border border-line bg-white/80 px-4 text-base text-ink placeholder:text-muted transition-colors duration-200 focus:border-ink/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-accent/70; }
+    .accent-mark { @apply block h-1 w-10 rounded-full bg-accent; }
+    .primary-button {
+        @apply bg-accent text-ink;
+        transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+    }
+    .primary-button:focus-visible { outline-color: #2A323F; }
+    .primary-button:active { transform: scale(0.98); }
+}
+.welcome-intro, .welcome-name { display: inline-block; max-width: 100%; }
+.welcome-intro { animation: welcome-in 550ms ease-out both; }
+.welcome-name {
+    color: #2A323F;
+    background: linear-gradient(transparent 60%, #FEEF4C 60%, #FEEF4C 94%, transparent 94%);
+    animation: welcome-in 550ms 220ms ease-out both;
+}
+.welcome-support { animation: welcome-in 550ms 440ms ease-out both; }
+.card-enter { animation: card-in 550ms ease-out both; }
+.profile-photo { animation: card-in 450ms 180ms ease-out both; }
+.task-row { animation: welcome-in 450ms var(--row-delay, 0ms) ease-out both; }
+@keyframes welcome-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+}
+@keyframes card-in {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: none; }
+}
+@keyframes glow-drift {
+    from { background-position: 0% 30%; }
+    to { background-position: 100% 70%; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .primary-button:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgb(42 50 63 / 15%); }
+    .primary-button:hover:active { transform: scale(0.98); }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .primary-button:active { transform: none; }
+}
